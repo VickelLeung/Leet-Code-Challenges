@@ -35,34 +35,53 @@ Output: 4
 	
 	
 	 public static int singleNumber(int[] nums) {
-		 
-		 
+		
 		 //base case
 		 if(nums.length == 0) return -1;
 		 if(nums.length == 1) return nums[0];
-			 
-		 
-		ArrayList<Integer> ar = new ArrayList<Integer>();
 	
+		 int index = 0;
+		 int end = nums.length-1;
+		 while(index < end) {
+			 
+			 if(nums[index] == nums[end]) {
+				 System.out.println();
+				 nums[index] = -9;
+				 nums[end] = -9;
+			 }
+			 else {
+				 end--;
+			 }
+			 
+			 index++;
+		 }
 		 
-		 for(int i = 0; i < nums.length; i++) {
-			ar.add(nums[i]);
+		 
+		 for(int i =0; i< nums.length; i++) {
+			 if(nums[i] != -9) return nums[i];
 		 }
-		 System.out.println(ar.size());
-		 //221
-		 for(int i = 0; i<ar.size(); i++) {
-			 int temp = nums[i];
-			 System.out.println("t: " + temp);
-			 System.out.println(ar);
-			 ar.remove(temp);
-			 System.out.println("removed: "+ar);
-			 
-			 
-			 if(!ar.contains(temp)) return temp;
-			 else ar.remove(temp);
-			 System.out.println("removed2: "+ar);
-			 System.out.println();
-		 }
+		 
+//		ArrayList<Integer> ar = new ArrayList<Integer>();
+//	
+//		 
+//		 for(int i = 0; i < nums.length; i++) {
+//			ar.add(nums[i]);
+//		 }
+//		 System.out.println(ar.size());
+//		 //221
+//		 for(int i = 0; i<ar.size(); i++) {
+//			 int temp = nums[i];
+//			 System.out.println("t: " + temp);
+//			 System.out.println(ar);
+//			 ar.remove(temp);
+//			 System.out.println("removed: "+ar);
+//			 
+//			 
+//			 if(!ar.contains(temp)) return temp;
+//			 else ar.remove(temp);
+//			 System.out.println("removed2: "+ar);
+//			 System.out.println();
+//		 }
 		 
 		 
 		 return -1;
