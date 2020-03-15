@@ -36,8 +36,7 @@ public class numberComplement_476 {
 	        n = n/2;
         	
         }
-        
-//        System.out.println(r);
+
         
         String reverseBinary ="";
         //convert complement binary
@@ -50,8 +49,7 @@ public class numberComplement_476 {
 	        		reverseBinary += '0';
 	        	}
          }
-            
-        System.out.println(reverseBinary);
+
         
         int binaryNumber = 0;
         int index = 0;
@@ -63,9 +61,7 @@ public class numberComplement_476 {
         	
         	index++;
         }
-        System.out.println("b: " + binaryNumber);
-        System.out.println(": " + binaryVal[23]);
-        
+
 		return binaryNumber;
     }
 	
