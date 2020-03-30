@@ -1,22 +1,22 @@
 package leetcode;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 public class FindDissapearArray_448 {
 
 	 public static List<Integer> findDisappearedNumbers(int[] nums) {
 		 List<Integer> list = new ArrayList<Integer>();
-		 HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
+		 HashSet<Integer> hs = new HashSet<>();
 		 
 		 for(int i = 0; i<nums.length; i++) {
-			 hm.put(i, nums[i]);
+			 hs.add(nums[i]);
 			 
 		 }
 		 
 		 for(int i = 1; i<=nums.length; i++) {
-			 if(!hm.containsValue(i)) {
+			 if(hs.add(i)) {
 				 list.add(i);
 			 }
 		 }
